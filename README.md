@@ -104,19 +104,23 @@ Next, we need to allow external traffic to access our application, to do this we
 
 Before we can apply these manifests, we need to uncomment and edit the following fields in the `alb-ingress-controller.yaml`:
 
-`cluster-name`: The name that you gave to your cluster in the eksctl command above.
-`vpc-id`: The VPC Id that you grabbed in the command above.
-`aws-region`: The region for your EKS cluster.
-`AWS_ACCESS_KEY_ID`: The AWS access key id that ALB controller can use to communicate with AWS. For this tutorial, we will add the access key in plaintext in the file. However, for a production setup, it is recommended to use a project like kube2iam for providing IAM Access.
-`AWS_SECRET_ACCESS_KEY`: The AWS secret access key id that ALB controller can use to communicate with AWS. For this tutorial, we will add the access key in plaintext in the file. However, for a production setup, it is recommended to use a project like kube2iam for providing IAM Access.
+- `cluster-name`: The name that you gave to your cluster in the eksctl command above.
+- `vpc-id`: The VPC Id that you grabbed in the command above.
+- `aws-region`: The region for your EKS cluster.
+- `AWS_ACCESS_KEY_ID`: The AWS access key id that ALB controller can use to communicate with AWS. For this tutorial, we will add the access key in plaintext in the file. However, for a production setup, it is recommended to use a project like kube2iam for providing IAM Access.
+- `AWS_SECRET_ACCESS_KEY`: The AWS secret access key id that ALB controller can use to communicate with AWS. For this tutorial, we will add the access key in plaintext in the file. However, for a production setup, it is recommended to use a project like kube2iam for providing IAM Access.
 
 Once you have finished editing then we can deploy the 2 files using kubectl
 
 ```bash
+
+cd ingress-controller
+
 kubectl apply -f rbac-role.yaml
 # clusterrole.rbac.authorization.k8s.io/alb-ingress-controller created
 # clusterrolebinding.rbac.authorization.k8s.io/alb-ingress-controller created
 # serviceaccount/alb-ingress-controller created
+
 ```
 
 ```bash
@@ -159,10 +163,13 @@ aws ecr create-repository --repository-name kubernetes-tutorial
 Make a note of the `repositoryUri` from json reponse you get back as you'll need to build our docker image. To be able to deploy our application onto Kubernetes, we need to create a Docker image for our application. Use the commands in the makefile to build and tag your docker image.
 
 ```bash
+
+cd auth
+
 make build
 ```
 ```bash
-make tag
+make tag # edit the file makefile with updated repositoryUri
 ```
 
 Next, we need to push the Docker image to ECR so that it can be accessed by the EKS cluster. Before we can push the image to ECR, we need to authenticate the Docker CLI:
