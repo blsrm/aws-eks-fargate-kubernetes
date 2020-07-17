@@ -270,6 +270,12 @@ curl -v 5fb65de9-goweb-goweb-a520-731462364.us-east-1.elb.amazonaws.com/api/user
 # pong
 ```
 
+### Cleanup
+
+```bash
+eksctl delete cluster eks-fargate-demo
+
+```
 
 ## 2. AWS Console
 Documentation to follow
