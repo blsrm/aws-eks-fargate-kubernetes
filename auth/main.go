@@ -6,7 +6,6 @@ import (
 	"github.com/gofiber/fiber"
 	"github.com/gofiber/fiber/middleware"
 	"github.com/gofiber/helmet"
-	"github.com/hom-bahrani/golang-gke-firestore/auth/routes"
 )
 
 func main() {
