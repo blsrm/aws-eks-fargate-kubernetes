@@ -3,11 +3,11 @@
 When it comes to building our EKS cluster we have a few different options.
 
 
-1 - Using the AWS CLI / eksctl
-2 - AWS Console
-3 - Using the AWS Cloud Development Kit
-4 - Using Cloudformation
-5 - Using Terraform
+1. Using the AWS CLI / eksctl
+2. AWS Console
+3. Using the AWS Cloud Development Kit
+4. Using Cloudformation
+5. Using Terraform
 
 In this tutorial I will be exploring options 1, 2 and 3. I will also provided links for repo examples to guide you if you want to try out 3 and 4.
 
