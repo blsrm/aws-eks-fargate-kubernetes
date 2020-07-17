@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: go-web
+  namespace: go-web
+spec:
+  selector:
+    app: go-web
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
