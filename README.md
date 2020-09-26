@@ -9,7 +9,7 @@ When it comes to building our EKS cluster we have a few different options.
 4. Using Cloudformation
 5. Using Terraform
 
-In this tutorial I will be exploring options 1, 2 and 3. I will also provided links for repo examples to guide you if you want to try out 3 and 4.
+In this tutorial I will be exploring option 1. I will also provided some resources at the end to guide you if you want to try out 2 - 5.
 
 ## 1. AWS CLI / eksctl
 
@@ -285,10 +285,10 @@ eksctl delete cluster eks-fargate-demo
 ```
 
 ## 2. AWS Console
-Documentation to follow
+There is a good AWS tutorial here https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html
 
 ## 3. Using the AWS Cloud Development Kit (CDK)
-Documentation to follow
+Some Python examples here for ECS and Fargate https://github.com/aws-samples/aws-cdk-examples/tree/master/python/ecs and an EKS example in Typescript https://github.com/aws-samples/aws-cdk-examples/tree/master/typescript/eks/cluster
 
 ## 4. and 5. Using Cloudformation and Terraform
-Links to follow
+Terraform - https://github.com/WesleyCharlesBlake/terraform-aws-eks, and cloudformation - https://github.com/aws-samples/amazon-eks-refarch-cloudformation
