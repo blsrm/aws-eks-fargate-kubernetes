@@ -1,4 +1,4 @@
-# aws-rust-kubernetes
+# aws-eks-fargate-kubernetes
 
 When it comes to building our EKS cluster we have a few different options.
 
